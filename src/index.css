@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/bogle");
+
+body {
+  font-family: "Bogle", sans-serif;
+  margin: 0;
+  img {
+    max-width: none;
+  }
+}
+.corner div {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.moblist li {
+  margin-bottom: 22px;
+}
+
+#dropdown-basic::after {
+  display: none !important;
+}
