@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { categories } from "../data/data-categories";
+import { categories } from "../../data/data-categories";
 
 function Categories() {
   const [Categories, setCategories] = useState(categories);

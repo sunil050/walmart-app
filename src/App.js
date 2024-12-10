@@ -1,25 +1,28 @@
 import "./App.css";
 import React from "react";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import Hero from "./components/Hero";
-import Products from "./components/Products";
-import Categories from "./components/Categories";
-import Footer from "./components/Footer";
-import Hero2 from "./components/Hero2";
-import Productsscroll from "./components/Productsscroll";
+import Layout from "./components/Layout";
+import Homepage from "./pages/home/Homepage";
+
+import Sign from "./pages/signin/Sign";
+import Cartpage from "./pages/cart/Cartpage";
 
 function App() {
   return (
-    <div >
-      <Navbar />
-      <Hero />
-      <Products />
-      <Categories />
-      <Productsscroll />
-      <Hero2 />
-      <Footer />
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Navigate replace to="home" />} />
+            <Route path="home" element={<Homepage />} />
+          </Route>
+          <Route path="sign" element={<Sign />} />
+          <Route path="Cartpage" element={<Cartpage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

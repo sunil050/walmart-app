@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import { products } from "../data/data";
+import { products } from "../../data/data";
 
 function Productsscroll() {
-  const [Products, setProducts] = useState(products);
+  const [Products] = useState(products);
   const scrollContainerRef3 = useRef(null);
 
   const scrollLeft3 = () => {

@@ -1,14 +1,14 @@
 import React from "react";
-import Gift from "../assets/Heroimage/gifts.jpg";
-import Stove from "../assets/Heroimage/stovetop.jpg";
-import Cooker from "../assets/Heroimage/ricecooker.jpg";
-import Coffe from "../assets/Heroimage/coffemaker.jpg";
-import Off from "../assets/Heroimage/offer50.jpg";
-import Girls from "../assets/Heroimage/girlscris.jpg";
-import Chicken from "../assets/Heroimage/chicken.jpg";
-import Firetree from "../assets/Heroimage/firetree.jpg";
-import Vacum from "../assets/Heroimage/vacum.png";
-import Off49 from "../assets/Heroimage/off49.png";
+import Gift from "../../assets/Heroimage/gifts.jpg";
+import Stove from "../../assets/Heroimage/stovetop.jpg";
+import Cooker from "../../assets/Heroimage/ricecooker.jpg";
+import Coffe from "../../assets/Heroimage/coffemaker.jpg";
+import Off from "../../assets/Heroimage/offer50.jpg";
+import Girls from "../../assets/Heroimage/girlscris.jpg";
+import Chicken from "../../assets/Heroimage/chicken.jpg";
+import Firetree from "../../assets/Heroimage/firetree.jpg";
+import Vacum from "../../assets/Heroimage/vacum.png";
+import Off49 from "../../assets/Heroimage/off49.png";
 
 function Hero() {
   return (

@@ -14,6 +14,7 @@ import { BsBoxArrowInDown } from "react-icons/bs";
 import { RxQuestionMarkCircled } from "react-icons/rx";
 import { CiGift } from "react-icons/ci";
 import { BsChat } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function CustomNavbar() {
   const [nav, setNav] = useState(false);
@@ -110,9 +111,12 @@ function CustomNavbar() {
 
         {/* Logo */}
 
-        <div className="flex w-auto items-center rounded-full p-2 hover:bg-[#002D58]">
+        <Link
+          to="/home"
+          className="flex w-auto items-center rounded-full p-2 hover:bg-[#002D58]"
+        >
           <img className="w-[32px] h-[32px]" src={logo} alt="logo"></img>
-        </div>
+        </Link>
 
         {/* Addres */}
 
@@ -255,11 +259,17 @@ function CustomNavbar() {
               >
                 <div className="mt-2 w-[178px]">
                   <ul className="text-sm p-0 text-gray-700">
-                    <li className="flex items-center cursor-pointer mt-3">
-                      <button className="bg-[#0071DC] h-8 font-semibold text-white rounded-full w-full">
-                        Sign in or create account
-                      </button>
-                    </li>
+                    <Link
+                      to="/Sign"
+                      onClick={() => setDropdownOpen2(!dropdownOpen2)}
+                      className="no-underline"
+                    >
+                      <li className="flex items-center cursor-pointer mt-3">
+                        <button className="bg-[#0071DC] h-8 font-semibold text-white rounded-full w-full">
+                          Sign in or create account
+                        </button>
+                      </li>
+                    </Link>
                     <hr className="w-full text-gray-500 mt-3" />
                     <li className="flex items-center pb-2 cursor-pointer">
                       <IoNewspaperOutline className="w-[15px] h-[15px] mr-2" />
@@ -293,10 +303,10 @@ function CustomNavbar() {
         {/* cart */}
 
         <div className="addres items-center justify-center mr-1 px-[14px] w-[60px] py-[3px]  rounded-full hover:bg-[#002D58]">
-          <div className="">
+          <Link to="/Cartpage" className="no-underline">
             <SlBasket className="text-white w-6 h-5" />
-            <p className=" text-white text-sm m-0  font-normal">$00.0</p>
-          </div>
+            <p className=" text-white text-sm m-0 font-normal">$00.0</p>
+          </Link>
         </div>
       </div>
 

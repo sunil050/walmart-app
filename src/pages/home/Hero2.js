@@ -1,11 +1,11 @@
 import React from "react";
-import Gift from "../assets/Heroimage/crem.jpg";
+import Gift from "../../assets/Heroimage/crem.jpg";
 
-import Off from "../assets/Heroimage/spacewar.jpg";
+import Off from "../../assets/Heroimage/spacewar.jpg";
 
-import Chicken from "../assets/Heroimage/womenbag.jpg";
-import Firetree from "../assets/Heroimage/bose.jpg";
-import Vacum from "../assets/Heroimage/watterbotle.jpg";
+import Chicken from "../../assets/Heroimage/womenbag.jpg";
+import Firetree from "../../assets/Heroimage/bose.jpg";
+import Vacum from "../../assets/Heroimage/watterbotle.jpg";
 
 function Hero2() {
   return (

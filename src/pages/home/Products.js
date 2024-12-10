@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import { products } from "../data/data";
-import Jacket from "../assets/Heroimage/jacket.jpg";
+import { products } from "../../data/data";
+import Jacket from "../../assets/Heroimage/jacket.jpg";
 
 function Products() {
   const [Products, setProducts] = useState(products);
