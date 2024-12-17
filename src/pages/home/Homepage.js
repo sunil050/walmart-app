@@ -9,9 +9,9 @@ const Homepage = () => {
   return (
     <>
       <Hero />
+      <Products />
       <Categories />
       <Hero2 />
-      <Products />
       <Productsscroll />
     </>
   );

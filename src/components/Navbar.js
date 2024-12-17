@@ -15,8 +15,12 @@ import { RxQuestionMarkCircled } from "react-icons/rx";
 import { CiGift } from "react-icons/ci";
 import { BsChat } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectTotalQuantity, selectTotalPrice } from "../slices/cartSlice";
 
 function CustomNavbar() {
+  const totalQuantity = useSelector(selectTotalQuantity);
+  const totalPrice = useSelector(selectTotalPrice);
   const [nav, setNav] = useState(false);
   // dropdown for items
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -302,10 +306,24 @@ function CustomNavbar() {
 
         {/* cart */}
 
-        <div className="addres items-center justify-center mr-1 px-[14px] w-[60px] py-[3px]  rounded-full hover:bg-[#002D58]">
+        <div className="addres relative items-center justify-center mr-1 px-[14px] w-[60px] h-[50px] py-[6px]  rounded-full hover:bg-[#002D58]">
           <Link to="/Cartpage" className="no-underline">
             <SlBasket className="text-white w-6 h-5" />
-            <p className=" text-white text-sm m-0 font-normal">$00.0</p>
+            <span className="absolute top-0 right-1">
+              {totalQuantity > 0 && (
+                <span className=" bg-red-500  text-white rounded-full w-4 h-4 flex items-center justify-center text-sm">
+                  {totalQuantity}
+                </span>
+              )}
+            </span>
+            <span className="absolute top-7 left-4">
+              {
+                <span className=" text-white w-4 h-4 flex items-center justify-center text-sm">
+                  ${totalPrice.toFixed(2)}
+                </span>
+              }
+            </span>
+            {/* <p className=" text-white text-sm m-0 font-normal">$00.0</p> */}
           </Link>
         </div>
       </div>
