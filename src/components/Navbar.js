@@ -89,7 +89,7 @@ function CustomNavbar() {
 
   return (
     <div className="w-[100%] font-Bogle sticky top-0 overflow-hidden z-50 ">
-      <div className="flex items-center w-full h-[85px] px-1 lg:px-4 bg-[#0071DC]">
+      <div className="flex items-center w-full h-[85px] px-1 lg:px-4 bg-[#50B498]">
         {/* Mobile menu */}
         <div className="">
           {/* List */}
@@ -117,14 +117,14 @@ function CustomNavbar() {
 
         <Link
           to="/home"
-          className="flex w-auto items-center rounded-full p-2 hover:bg-[#002D58]"
+          className="flex w-auto items-center rounded-full p-2 hover:bg-[#12372A]"
         >
           <img className="w-[32px] h-[32px]" src={logo} alt="logo"></img>
         </Link>
 
         {/* Addres */}
 
-        <div className="addres hidden lg:flex items-center h-12 w-[310px] mx-4 rounded-full p-2 bg-[#002D58]">
+        <div className="addres hidden lg:flex items-center h-12 w-[310px] mx-4 rounded-full p-2 bg-[#12372A]">
           <div className="flex">
             <img
               className="w-[30px] h-[30px]"
@@ -151,7 +151,7 @@ function CustomNavbar() {
             type="serch"
             placeholder={placeholder}
           ></input>
-          <div className="bg-[#0071DC] hover:bg-[#002D58] absolute rounded-full w-8 h-8 right-4 justify-center flex items-center">
+          <div className="bg-[#50B498] hover:bg-[#12372A] absolute rounded-full w-8 h-8 right-4 justify-center flex items-center">
             <IoSearchOutline className="w-6 h-6 text-white" />
           </div>
         </div>
@@ -164,8 +164,8 @@ function CustomNavbar() {
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className={`addres hidden lg:flex items-center justify-normal h-12 px-[14px] w-[120px] rounded-full ${
               dropdownOpen
-                ? "bg-[#002D58]"
-                : "hover:bg-[#002D58] active:bg-[#002D58]"
+                ? "bg-[#12372A]"
+                : "hover:bg-[#12372A] active:bg-[#12372A]"
             }`}
           >
             <div className="flex pr-2">
@@ -196,7 +196,7 @@ function CustomNavbar() {
                   <li className="flex items-center py-2 cursor-pointer">
                     <BsBoxArrowInDown className="w-[15px] h-[15px] mr-2" />
                     <a
-                      href=""
+                      href="/"
                       className="text-gray-950 no-underline hover:underline"
                     >
                       Reorder
@@ -205,7 +205,7 @@ function CustomNavbar() {
                   <li className="flex items-center py-2 cursor-pointer">
                     <AiOutlineHeart className="w-[15px] h-[15px] mr-2" />
                     <a
-                      href=""
+                      href="/"
                       className="text-gray-950 no-underline hover:underline"
                     >
                       List
@@ -214,7 +214,7 @@ function CustomNavbar() {
                   <li className="flex items-center py-2 cursor-pointer">
                     <CiGift className="w-[15px] h-[15px] mr-2" />
                     <a
-                      href=""
+                      href="/"
                       className="text-gray-950 no-underline hover:underline"
                     >
                       Registries
@@ -233,8 +233,8 @@ function CustomNavbar() {
             onClick={() => setDropdownOpen2(!dropdownOpen2)}
             className={`addres hidden lg:flex items-center justify-normal mx-1 h-12 px-[14px] w-auto  rounded-full ${
               dropdownOpen2
-                ? "bg-[#002D58]"
-                : "hover:bg-[#002D58] active:bg-[#002D58]"
+                ? "bg-[#12372A]"
+                : "hover:bg-[#12372A] active:bg-[#12372A]"
             }`}
           >
             <div className="flex pr-1">
@@ -278,7 +278,7 @@ function CustomNavbar() {
                     <li className="flex items-center pb-2 cursor-pointer">
                       <IoNewspaperOutline className="w-[15px] h-[15px] mr-2" />
                       <a
-                        href=""
+                        href="/"
                         className="text-gray-950 no-underline hover:underline"
                       >
                         Purchase History
@@ -291,7 +291,7 @@ function CustomNavbar() {
                         className="w-[15px] h-[15px] mr-2"
                       ></img>
                       <a
-                        href=""
+                        href="/"
                         className="text-gray-950 no-underline hover:underline"
                       >
                         Walmart+
@@ -306,7 +306,7 @@ function CustomNavbar() {
 
         {/* cart */}
 
-        <div className="addres relative items-center justify-center mr-1 px-[14px] w-[60px] h-[50px] py-[6px]  rounded-full hover:bg-[#002D58]">
+        <div className="addres relative items-center justify-center mr-1 px-[14px] w-[60px] h-[50px] py-[6px]  rounded-full hover:bg-[#12372A]">
           <Link to="/Cartpage" className="no-underline">
             <SlBasket className="text-white w-6 h-5" />
             <span className="absolute top-0 right-1">
@@ -323,7 +323,6 @@ function CustomNavbar() {
                 </span>
               }
             </span>
-            {/* <p className=" text-white text-sm m-0 font-normal">$00.0</p> */}
           </Link>
         </div>
       </div>
@@ -373,28 +372,95 @@ function CustomNavbar() {
             </button>
           </div>
           <p className="flex m-0 text-blue-500 px-4 items-center">|</p>
-          <ul className="flex items-center px-0 m-0 gap-[22px] text-sm">
-            <a className="text-black no-underline hover:underline">Savings</a>
-            <a className="text-black no-underline hover:underline">
-              Grocery & Essentails
-            </a>
-            <a className="text-black no-underline hover:underline">
-              Holiday Shop
-            </a>
-            <a className="text-black no-underline hover:underline">
-              Gift Ideas
-            </a>
-            <a className="text-black no-underline hover:underline">
-              New & Trending
-            </a>
-            <a className="text-black no-underline hover:underline">Toy Shop</a>
-            <a className="text-black no-underline hover:underline">Home</a>
-            <a className="text-black no-underline hover:underline">Fashion</a>
-            <a className="text-black no-underline hover:underline">
-              Electronics
-            </a>
-            <a className="text-black no-underline hover:underline">Registry</a>
-            <a className="text-black no-underline hover:underline">ONE Cash</a>
+          <ul className="flex items-center px-0 m-0 gap-[22px] text-sm overflow-hidden">
+            <li>
+              <a
+                href="/savings"
+                className="text-black no-underline hover:underline"
+              >
+                Savings
+              </a>
+            </li>
+            <li>
+              <a
+                href="/grocery-essentials"
+                className="text-black no-underline hover:underline"
+              >
+                Grocery & Essentials
+              </a>
+            </li>
+            <li>
+              <a
+                href="/holiday-shop"
+                className="text-black no-underline hover:underline"
+              >
+                Holiday Shop
+              </a>
+            </li>
+            <li className="hidden md:block">
+              <a
+                href="/gift-ideas"
+                className="text-black no-underline hover:underline"
+              >
+                Gift Ideas
+              </a>
+            </li>
+            <li className="hidden md:block">
+              <a
+                href="/new-trending"
+                className="text-black no-underline hover:underline"
+              >
+                New & Trending
+              </a>
+            </li>
+            <li className="hidden lg:block">
+              <a
+                href="/toy-shop"
+                className="text-black no-underline hover:underline"
+              >
+                Toy Shop
+              </a>
+            </li>
+            <li className="hidden lg:block">
+              <a
+                href="/home"
+                className="text-black no-underline hover:underline"
+              >
+                Home
+              </a>
+            </li>
+            <li className="hidden xl:block">
+              <a
+                href="/fashion"
+                className="text-black no-underline hover:underline"
+              >
+                Fashion
+              </a>
+            </li>
+            <li className="hidden xl:block">
+              <a
+                href="/electronics"
+                className="text-black no-underline hover:underline"
+              >
+                Electronics
+              </a>
+            </li>
+            <li className="hidden xl:block">
+              <a
+                href="/registry"
+                className="text-black no-underline hover:underline"
+              >
+                Registry
+              </a>
+            </li>
+            <li className="hidden xl:block">
+              <a
+                href="/one-cash"
+                className="text-black no-underline hover:underline"
+              >
+                ONE Cash
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -419,9 +485,15 @@ function CustomNavbar() {
         <div className="">
           <div className="flex mt-[60px] items-center pl-6 mb-14">
             <img className="w-[30px] h-[30px] mr-3" src={logo} alt="logo"></img>
-            <button className="text-[14px] text-white bg-[#0071DC] rounded-full px-3 py-1">
-              Sign in or create account
-            </button>
+            <Link
+              to="/Sign"
+              onClick={() => setDropdownOpen2(!dropdownOpen2)}
+              className="no-underline"
+            >
+              <button className="text-[14px] text-white bg-[#0071DC] rounded-full px-3 py-1">
+                Sign in or create account
+              </button>
+            </Link>
           </div>
           <div className="moblist w-[290px] max-h-[60vh] items-center text-sm text-gray-700 overflow-y-scroll scroll-smooth scroll-m-0 scrollbar-hide">
             <ul>

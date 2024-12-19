@@ -63,8 +63,11 @@ function Products() {
           className="grid grid-flow-col overflow-x-scroll scrollbar-hide snap-x snap-start gap-4 px-10"
         >
           {Products.map((item) => (
-            <div key={item.id} className="w-full h-full">
-              <div className="object-contain py-0 flex items-center justify-center flex-col">
+            <div
+              key={item.id}
+              className="w-full h-full flex flex-col items-center"
+            >
+              <div className="flex-grow flex flex-col items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -94,14 +97,15 @@ function Products() {
                       ? `${item.description.slice(0, 50)}...`
                       : "No description available"}
                   </p>
-                  <button
-                    onClick={() => addOncart(item)}
-                    className="bg-primary hover:opacity-75 text-white font-semibold py-1 px-5 rounded-full text-xl mt-2"
-                  >
-                    Add
-                  </button>
                 </div>
               </div>
+              {/* Add button positioned at the bottom */}
+              <button
+                onClick={() => addOncart(item)}
+                className="bg-primary hover:opacity-75 text-white font-semibold py-1 px-5 rounded-full text-xl mt-4"
+              >
+                Add
+              </button>
             </div>
           ))}
         </div>
@@ -144,8 +148,11 @@ function Products() {
               className="grid grid-flow-col overflow-x-scroll scrollbar-hide snap-x snap-start gap-4 px-10"
             >
               {Products.map((item) => (
-                <div key={item.id} className="w-full h-full">
-                  <div className="object-contain py-0 flex items-center justify-center flex-col">
+                <div
+                  key={item.id}
+                  className="w-full h-full flex flex-col items-center"
+                >
+                  <div className="flex-grow flex items-center justify-center flex-col">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -167,11 +174,14 @@ function Products() {
                       <p className="product-description text-[15px]">
                         {`${item.description.slice(0, 50)}...`}
                       </p>
-                      <button className="py-1 my-1 px-2 border border-black text-black rounded-full text-sm">
-                        Options
-                      </button>
                     </div>
                   </div>
+                  <button
+                    onClick={() => addOncart(item)}
+                    className="bg-primary hover:opacity-75 text-white font-semibold py-1 px-5 rounded-full text-xl mt-4"
+                  >
+                    Add
+                  </button>
                 </div>
               ))}
             </div>

@@ -55,7 +55,7 @@ const cartSlice = createSlice({
           draggable: true,
           theme: "colored",
           style: {
-            backgroundColor: "#ef4444",
+            backgroundColor: "#12372A",
             color: "#fff",
             fontSize: "16px",
           },
@@ -89,6 +89,35 @@ const cartSlice = createSlice({
       state.totalDeliveryAmount = getTotalDelivery(state.items);
     },
     removeItem: (state, action) => {
+      const removedItem = state.items.find(
+        (item) => item.id === action.payload
+      );
+
+      if (removedItem) {
+        console.log("Removed item:", removedItem);
+        // Trigger the toast notification before updating the state
+        toast.warn(`${removedItem.name} has been removed from the cart.`, {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+          style: {
+            backgroundColor: "#f8d7da", // Light red background
+            color: "#721c24", // Dark red text
+            border: "1px solid #f5c6cb", // Light red border
+            borderRadius: "8px", // Rounded corners
+            padding: "16px", // Add padding
+            fontSize: "14px", // Adjust font size
+            fontWeight: "bold", // Bold text
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add a subtle shadow
+          },
+        });
+      }
+
+      // Remove the item from the state
       state.items = state.items.filter((item) => item.id !== action.payload);
 
       // Update totals
