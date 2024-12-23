@@ -22,7 +22,7 @@ const notifywarn = () => {
   toast.warn("This Item Already Added to the Cart", {
     position: "top-center",
     autoClose: 1000,
-    hideProgressBar: false,
+    hideProgressBar: true,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
@@ -47,16 +47,16 @@ const cartSlice = createSlice({
 
         // ${action.payload.name} has been
         toast.success("added to the cart!", {
-          position: "top-center",
+          position: "bottom-right",
           autoClose: 2000,
-          hideProgressBar: false,
+          hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           theme: "colored",
           style: {
-            backgroundColor: "#12372A",
-            color: "#fff",
+            backgroundColor: "#A4BE7B",
+            color: "#212121",
             fontSize: "16px",
           },
         });
@@ -99,14 +99,14 @@ const cartSlice = createSlice({
         toast.warn(`${removedItem.name} has been removed from the cart.`, {
           position: "top-center",
           autoClose: 2000,
-          hideProgressBar: false,
+          hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           theme: "colored",
           style: {
-            backgroundColor: "#f8d7da", // Light red background
-            color: "#721c24", // Dark red text
+            backgroundColor: "#FEF5ED", // Light red background
+            color: "#F72C5B", // Dark red text
             border: "1px solid #f5c6cb", // Light red border
             borderRadius: "8px", // Rounded corners
             padding: "16px", // Add padding

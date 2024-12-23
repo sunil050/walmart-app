@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         bogle: ["Bogle", "sans-serif"], // Ensure the font name matches your import
       },
+      boxShadow: {
+        custom:
+          "0.5px 0.5px 0px, -0.5px -0.5px 0px, 0px -0.5px 0px, -0.5px 0px 0px, 0.5px 0px 0px, 0px 0.5px 0px",
+      },
     },
   },
   plugins: [

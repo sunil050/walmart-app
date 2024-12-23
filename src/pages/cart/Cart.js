@@ -66,16 +66,21 @@ const Cart = () => {
                 Fill it up with savings from these popular departments:
               </p>
 
-              <div className="flex w-[500px] h-[100px] justify-center">
-                <ul className="flex flex-wrap text-base text-gray-800 justify-center items-center gap-4">
+              <div className="flex h-auto justify-center">
+                <ul className="flex flex-wrap w-full text-base text-gray-800 justify-center items-center gap-4">
                   {[
                     "Shop Grocery",
                     "Shop Electronics",
                     "Shop Toys",
                     "Shop Home",
-                  ].map((item) => (
-                    <li key={item}>
-                      <button className="w-auto border-gray-500 border-[1.6px] hover:border-2 rounded-full px-3 h-8 text-sm font-bold">
+                  ].map((item, index) => (
+                    <li
+                      key={item}
+                      className={
+                        index === 3 ? "w-full flex justify-center" : "w-auto"
+                      }
+                    >
+                      <button className="flex justify-center items-center border-[1.6px] hover:shadow-custom  border-black  rounded-full h-8 text-sm font-bold px-4 py-1">
                         {item}
                       </button>
                     </li>
@@ -113,16 +118,6 @@ const Cart = () => {
                 </li>
               ))}
             </div>
-
-            {/* <ul className="flex flex-col pl-0 place-items-start text-left text-xs lg:text-sm gap-[10px] md:flex-row md:flex-wrap md:gap-[26px] md:justify-end md:text-right">
-              <li className="items-center">Give feedback</li>
-              <li className="items-center">CA Privacy Rights</li>
-              <li className="items-center">Your Privacy Choices</li>
-              <li className="items-center">Notice at Collection</li>
-              <li className="items-center">Request My Personal Information</li>
-              <li className="items-center">Delete Account</li>
-              <li className="items-center">California Supply Chains Act</li>
-            </ul> */}
           </div>
         </div>
       </div>

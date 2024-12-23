@@ -8,6 +8,7 @@ import Homepage from "./pages/home/Homepage";
 
 import Sign from "./pages/signin/Sign";
 import Cartpage from "./pages/cart/Cartpage";
+import Payment from "./pages/cart/Payment";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Route>
           <Route path="sign" element={<Sign />} />
           <Route path="Cartpage" element={<Cartpage />} />
+          <Route path="Payment" element={<Payment />} />
         </Routes>
       </BrowserRouter>
     </>

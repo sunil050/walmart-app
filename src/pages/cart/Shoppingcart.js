@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
   decrementQuantity,
   removeItem,
 } from "../../slices/cartSlice";
+import Payment from "./Payment";
 
 const ShoppingCart = () => {
   const dispatch = useDispatch();
+  const [showPayment, setShowPayment] = useState(false);
+
   const {
     items = [],
     savings = 0,
@@ -23,15 +26,15 @@ const ShoppingCart = () => {
   // Calculate total
   const total = subtotal - savings + shipping;
 
+  // Render the Payment component if showPayment is true
+  if (showPayment) {
+    return <Payment />;
+  }
+
   return (
-    <div className="flex w-full h-auto flex-col lg:flex-row justify-between p-6 bg-gray-100">
+    <div className="flex w-full h-auto justify-between p-6 bg-gray-100">
       {/* Left Section - Items */}
-      <div className="w-full lg:w-2/3 bg-white p-4 rounded shadow-md">
-        {/* <h2 className="text-xl font-bold mb-4">
-          {items.length > 0
-            ? `${items.length} Items selected`
-            : "Your cart is empty"}
-        </h2> */}
+      <div className="w-full lg:w-2/3 bg-white p-4 rounded shadow-md overflow-y-auto max-h-[calc(100vh-12px)]">
         {items.length > 0 ? (
           items.map((item) => (
             <div key={item.id} className="border-b pb-4 mb-4 flex items-start">
@@ -90,7 +93,7 @@ const ShoppingCart = () => {
       </div>
 
       {/* Right Section - Summary */}
-      <div className="w-full lg:w-1/3 mt-6 lg:mt-0 lg:ml-6 bg-white p-4 rounded shadow-md">
+      <div className="sw-full lg:w-1/3 lg:ml-6 bg-white p-4 rounded shadow-md sticky top-6 h-max">
         <h2 className="text-xl font-bold mb-4">Summary</h2>
         <div className="flex justify-between mb-2">
           <span>Subtotal</span>
@@ -113,7 +116,10 @@ const ShoppingCart = () => {
           <span className="font-bold text-lg">${total.toFixed(2)}</span>
         </div>
         {items.length > 0 && (
-          <button className="w-full mt-4 bg-blue-600 text-white py-2 rounded">
+          <button
+            className="w-full mt-4 bg-blue-600 text-white py-2 rounded"
+            onClick={() => setShowPayment(true)}
+          >
             Continue to Checkout
           </button>
         )}
